@@ -1,0 +1,63 @@
+<!-- adduser.html -->
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-5">
+  <div class="col-md-6 mx-auto">
+    <h2 class="text-center mb-4">Add Your Profile</h2>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+
+      <div class="mt-3 mb-3">
+        <label for="id_username" class="form-label">Username</label>
+        <input
+          type="text"
+          name="username"
+          id="id_username"
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback">Please enter a username.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="id_email" class="form-label">Email</label>
+        <input
+          type="email"
+          name="email"
+          id="id_email"
+          class="form-control"
+          required
+        />
+        <div class="invalid-feedback">Please enter a valid email address.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="id_description" class="form-label">Description</label>
+        <textarea
+          name="description"
+          id="id_description"
+          class="form-control"
+          rows="3"
+          required
+        ></textarea>
+        <div class="invalid-feedback">Please enter a description.</div>
+      </div>
+
+      <div class="mb-3">
+        <label for="id_image" class="form-label">Image</label>
+        <input
+          type="file"
+          name="image"
+          id="id_image"
+          class="form-control"
+          accept="image/*"
+          required
+        />
+        <div class="invalid-feedback">Please choose an image file.</div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Upload</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
