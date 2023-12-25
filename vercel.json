@@ -4,31 +4,24 @@
     {
       "src": "ImageUploader/wsgi.py",
       "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "15mb",
-        "runtime": "python3.9"
-      }
-    }
-  ],
-  "routes": [
+      "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+    },
     {
       "src": "build_files.sh",
       "use": "@vercel/static-build",
       "config": {
         "distDir": "staticfiles_build"
       }
-    },
-    {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
-    },
+    }
+  ],
+  "routes": [
     {
       "src": "/media/(.*)",
       "dest": "/media/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "ImageUploader/wsgi.py"
+      "dest": "devntechno/wsgi.py"
     }
   ]
 }
