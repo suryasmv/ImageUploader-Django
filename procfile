@@ -1,0 +1,1 @@
+web: gunicorn ImageUploader.wsgi --log-file -
